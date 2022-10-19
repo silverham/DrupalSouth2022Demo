@@ -1,0 +1,20 @@
+global:
+  version: 1.0
+  css:
+    theme:
+      assets/main.css: {}
+  js:
+    assets/off-canvas-demo.js: {}
+  dependencies:
+  # BASE Settings.
+   # Ensure Drupal Settings are on the page if required.
+   - core/drupalSettings
+   - core/jquery
+   # Optional if not attached.
+   # - core/drupal.dialog
+   # - core/drupal.dialog.off_canvas
+layout_twocol:
+  version: 1.0
+  css:
+    theme:
+      assets/two-col.css: {}

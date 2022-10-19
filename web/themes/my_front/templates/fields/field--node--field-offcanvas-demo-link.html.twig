@@ -1,0 +1,65 @@
+{#
+/**
+ * @file
+ * Theme override for a field.
+ *
+ * To override output, copy the "field.html.twig" from the templates directory
+ * to your theme's directory and customize it, just like customizing other
+ * Drupal templates such as page.html.twig or node.html.twig.
+ *
+ * Instead of overriding the theming for all fields, you can also just override
+ * theming for a subset of fields using
+ * @link themeable Theme hook suggestions. @endlink For example,
+ * here are some theme hook suggestions that can be used for a field_foo field
+ * on an article node type:
+ * - field--node--field-foo--article.html.twig
+ * - field--node--field-foo.html.twig
+ * - field--node--article.html.twig
+ * - field--field-foo.html.twig
+ * - field--text-with-summary.html.twig
+ * - field.html.twig
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - label_hidden: Whether to show the field label or not.
+ * - title_attributes: HTML attributes for the title.
+ * - label: The label for the field.
+ * - multiple: TRUE if a field can contain multiple items.
+ * - items: List of all the field items. Each item contains:
+ *   - attributes: List of HTML attributes for each item.
+ *   - content: The field item's content.
+ * - entity_type: The entity type to which the field belongs.
+ * - field_name: The name of the field.
+ * - field_type: The type of the field.
+ * - label_display: The display settings for the label.
+ *
+ *
+ * @see template_preprocess_field()
+ */
+#}
+{% extends "field.html.twig" %}
+{# Ensure no crash on layout builder screen. #}
+{% if element['#entity_type'] and element['#object'] %}
+  {% set tid = element['#object'].field_tags.value[0].target_id %}
+  {% for key, item in items %}
+    {% set item = item|merge({
+      'content': link(
+        item.content['#title'],
+        'base:' ~ path('view.offcanvas_demo_page.page_1', {'arg_0': tid}),
+        create_attribute()
+          .addClass('use-ajax', 'my-extra-class')
+          .setAttribute('data-dialog-type', 'dialog')
+          .setAttribute('data-dialog-renderer', 'off_canvas')
+      )|merge({
+        '#attached': {
+          'library': [
+            'core/drupal.dialog.ajax',
+            'core/drupal.dialog.off_canvas',
+          ],
+        }
+      })
+    }) %}
+    {% set items = ( {(key): item} + items ) %}
+  {% endfor %}
+  {% set items = items|reverse %}
+{% endif %}

@@ -1,0 +1,28 @@
+layout__custom__onecol:
+  label: 'Custom: One column'
+  path: templates/custom/layout
+  template: layout--custom--onecol
+  class: '\Drupal\my_front\Plugin\Layout\CustomDefaultLayoutPlugin'
+  library: layout_discovery/onecol
+  category: 'Columns: 1'
+  default_region: content
+  icon_map:
+    - [content]
+  regions:
+    content:
+      label: Content
+layout__custom__twocol:
+  label: 'Custom: Two column'
+  path: templates/custom/layout
+  template: layout--custom--twocol
+  library: my_front/layout_twocol
+  class: '\Drupal\my_front\Plugin\Layout\CustomTwoColLayoutPlugin'
+  category: 'Columns: 2'
+  default_region: first
+  icon_map:
+    - [first, second]
+  regions:
+    first:
+      label: First
+    second:
+      label: Second

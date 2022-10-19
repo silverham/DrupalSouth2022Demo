@@ -1,0 +1,16 @@
+name: my-first-drupal9-app
+recipe: drupal9
+config:
+  webroot: web
+tooling:
+  composer:
+    service: appserver
+    description: Run composer commands
+    cmd:
+      - php -d memory_limit=-1 /usr/local/bin/composer
+    env:
+      # Fix process timeout.
+      # Installing drupal/core (9.3.14): Downloading (100%)
+      # The process "unzip -qq  'web/core/799b46d890c5393e44dc8029cf223112' -d '/app/vendor/composer/cd9d0ad4'"
+      # exceeded the timeout of 300 seconds.
+      COMPOSER_PROCESS_TIMEOUT: 2000

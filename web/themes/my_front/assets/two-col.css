@@ -1,0 +1,40 @@
+/*
+ * @file
+ * Provides the layout styles for two-column layout section.
+ */
+
+.layout--custom--twocol {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.layout--custom--twocol > .layout__region {
+  flex: 0 1 100%;
+}
+
+@media screen and (min-width: 40em) {
+  .layout--custom--twocol.layout--custom--twocol--50-50 > .layout__region--first,
+  .layout--custom--twocol.layout--custom--twocol--50-50 > .layout__region--second {
+    flex: 0 1 50%;
+  }
+
+  .layout--custom--twocol.layout--custom--twocol--33-67 > .layout__region--first,
+  .layout--custom--twocol.layout--custom--twocol--67-33 > .layout__region--second {
+    flex: 0 1 33%;
+  }
+
+  .layout--custom--twocol.layout--custom--twocol--33-67 > .layout__region--second,
+  .layout--custom--twocol.layout--custom--twocol--67-33 > .layout__region--first {
+    flex: 0 1 67%;
+  }
+
+  .layout--custom--twocol.layout--custom--twocol--25-75 > .layout__region--first,
+  .layout--custom--twocol.layout--custom--twocol--75-25 > .layout__region--second {
+    flex: 0 1 25%;
+  }
+
+  .layout--custom--twocol.layout--custom--twocol--25-75 > .layout__region--second,
+  .layout--custom--twocol.layout--custom--twocol--75-25 > .layout__region--first {
+    flex: 0 1 75%;
+  }
+}

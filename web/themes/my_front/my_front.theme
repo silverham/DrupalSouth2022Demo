@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * @file
+ * SOE, classy sub-theme.
+ */
+
+$theme_dir = version_compare(phpversion(), '5.3.10', '<') ? dirname(__FILE__) : __DIR__;
+
+/**
+ * Include template functions from the includes folder.
+ *
+ * Naming convention for inlclude files should be my_front.{file_name}.inc.
+ */
+$include_locations = [
+  '/includes/my_front.*.inc',
+  '/includes/*/my_front.*.inc',
+  '/includes/*/*/my_front.*.inc',
+];
+
+foreach ($include_locations as $include_location) {
+  foreach (glob($theme_dir . $include_location) as $filename) {
+    require_once $filename;
+  }
+}

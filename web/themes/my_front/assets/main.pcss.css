@@ -1,0 +1,33 @@
+.another-element-resize {
+  background-color: bisque;
+}
+
+/* Background change demo. */
+.page-wrapper {
+	@nest body.modal-dialog-open--off-canvas--my-thing & {
+		background-color: lightgray;
+	}
+}
+/* Fix visual bug with contextual links with layout builder for demo. */
+/* Usually you would hide the contextual links until a proper fix is implemented. */
+#drupal-off-canvas .contextual > .trigger {
+  font-size: 0;
+  background-color: white;
+  background-image: url(/core/misc/icons/bebebe/pencil.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 16px 16px;
+  border: 1px solid #ccc;
+  border-radius: 13px;
+  float: right;
+}
+#drupal-off-canvas .contextual > .trigger + .contextual-links[hidden] {
+	display: none;
+}
+#drupal-off-canvas .contextual > .trigger + .contextual-links {
+  float: right;
+  clear: both;
+}
+#drupal-off-canvas .view-header {
+	margin: 0;
+}
