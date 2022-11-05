@@ -1,0 +1,19 @@
+uuid: 3006fa50-5888-42ed-ad20-b682e0369996
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_offcanvas_demo_link
+field_name: field_offcanvas_demo_link
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

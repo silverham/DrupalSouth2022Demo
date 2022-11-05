@@ -1,0 +1,22 @@
+uuid: 9ea2aaa4-36f9-4c0a-82f7-38ab692edfd0
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - my_front
+_core:
+  default_config_hash: VhBzWb7lMRtIOg9G7VSw_0uopi-7zXeHq4vXqqV1HFE
+id: my_front_breadcrumbs
+theme: my_front
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

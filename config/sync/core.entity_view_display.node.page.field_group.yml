@@ -1,0 +1,98 @@
+uuid: b1454a32-4f2e-4449-8692-82c13e6a6c48
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.field_group
+    - field.field.node.page.body
+    - field.field.node.page.field_offcanvas_demo_link
+    - field.field.node.page.field_second_body
+    - field.field.node.page.field_tags
+    - node.type.page
+  module:
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          f0c6d17b-6707-4891-bacf-696dae1d9830:
+            uuid: f0c6d17b-6707-4891-bacf-696dae1d9830
+            region: content
+            configuration:
+              id: 'field_block:node:page:body'
+              label: 'Body (Field group)'
+              label_display: visible
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          c74ad08e-2229-4a66-a470-4978724f2b1f:
+            uuid: c74ad08e-2229-4a66-a470-4978724f2b1f
+            region: content
+            configuration:
+              id: 'field_block:node:page:field_second_body'
+              label: 'Second Body (Field Group)'
+              label_display: visible
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+_core:
+  default_config_hash: M_Y8L5tfmhx7DR143E05YyZSpvgil6VFvqcfBWykalg
+id: node.page.field_group
+targetEntityType: node
+bundle: page
+mode: field_group
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  field_second_body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_offcanvas_demo_link: true
+  field_tags: true
+  layout_builder__layout: true

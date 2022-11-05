@@ -1,0 +1,21 @@
+uuid: 70b963fc-96b2-4862-a7a9-44d2a4f0fe5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_second_body
+    - node.type.page
+  module:
+    - text
+id: node.page.field_second_body
+field_name: field_second_body
+entity_type: node
+bundle: page
+label: 'Second Body'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

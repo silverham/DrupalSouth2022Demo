@@ -1,0 +1,10 @@
+uuid: aac77485-8ae4-49a4-b4b1-01ad3316ac64
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_group
+label: 'Field Group'
+targetEntityType: node
+cache: true
